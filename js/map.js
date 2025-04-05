@@ -37,15 +37,15 @@ function initMap() {
         transparent: true,
         attribution: 'Bhuvan'
     });
-
-    overlays["Tamil Nadu Flood Zones"] = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
-        layers: 'ld:TN_LD50K_1516',       // The layer you want to display
-        format: 'image/png',               // Image format
-        transparent: true,                 // Transparent background
-        version: '1.1.1',                  // WMS version
-        crs: L.CRS.EPSG4326,               // Coordinate Reference System
-        bounds: [[8.075, 76.234], [13.565, 80.349]],  // Define the bounding box (extent for Tamil Nadu)
-        attribution: 'Bhuvan'              // Optional: Add attribution for the data source
+    
+    overlays["SISDP Phase 2 LULC 10K"] = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
+        layers: 'sisdp_phase2:SISDP_P2_LULC_10K_2016_2019_TN',  // The layer you want to display
+        format: 'image/png',                                    // Image format
+        transparent: true,                                      // Transparent background
+        version: '1.1.1',                                       // WMS version
+        crs: L.CRS.EPSG4326,                                    // Coordinate Reference System
+        bounds: [[8.075, 76.234], [13.565, 80.349]],            // Define the bounding box (extent for Tamil Nadu)
+        attribution: 'Bhuvan'                                   // Optional: Add attribution for the data source
     });
 
     overlays["Tamil Nadu Land Use"] = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
