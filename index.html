@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice GIS - SpaceCon Hackathon</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Voice GIS</h1>
+        <div class="subtitle">SpaceCon Hackathon - Team CODE 404</div>
+    </header>
+    
+    <main>
+        <div id="map-container"></div>
+        
+        <div class="controls-panel">
+            <div class="voice-control">
+                <button id="mic-button" class="mic-button">
+                    <img src="img/mic.svg" alt="Microphone" id="mic-icon">
+                </button>
+                <div id="command-display">Click microphone to speak</div>
+            </div>
+            
+            <div class="help-panel">
+                <h3>Available Commands</h3>
+                <div class="command-list">
+                    <p><strong>Navigation:</strong> "Go to [location]", "Show me [place]"</p>
+                    <p><strong>Zoom:</strong> "Zoom in", "Zoom out"</p>
+                    <p><strong>Layers:</strong> "Show satellite view", "Show map view", "Show Bhuvan", "Hide Bhuvan"</p>
+                    <p><strong>Search:</strong> "Find [POI] near [location]" (e.g., "Find hospitals near Ahmedabad")</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Developed by: Shivansh Pandey, Shuvayu Sarkar, Keshav Dadhich, Neha Naik - NIT Goa</p>
+    </footer>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/map.js"></script>
+    <script src="js/geocoding.js"></script>
+    <script src="js/poi.js"></script>
+    <script src="js/commands.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
