@@ -37,6 +37,36 @@ function initMap() {
         transparent: true,
         attribution: 'Bhuvan'
     });
+
+    overlays["Tamil Nadu Flood Zones"] = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
+        layers: 'ld:TN_LD50K_1516',       // The layer you want to display
+        format: 'image/png',               // Image format
+        transparent: true,                 // Transparent background
+        version: '1.1.1',                  // WMS version
+        crs: L.CRS.EPSG4326,               // Coordinate Reference System
+        bounds: [[8.075, 76.234], [13.565, 80.349]],  // Define the bounding box (extent for Tamil Nadu)
+        attribution: 'Bhuvan'              // Optional: Add attribution for the data source
+    });
+
+    overlays["Tamil Nadu Land Use"] = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
+        layers: 'lulc:TN_LULC50K_1516',  // The layer you want to display
+        format: 'image/png',              // Image format
+        transparent: true,                // Transparent background for overlay
+        version: '1.1.1',                 // WMS version
+        crs: L.CRS.EPSG4326,              // Coordinate Reference System
+        bounds: [[8.075, 76.234], [13.565, 80.349]],  // Define the bounding box (extent for Tamil Nadu)
+        attribution: 'Bhuvan'             // Optional: Add attribution for the data source
+    });
+
+    overlays["Tamil Nadu Land Degradation"] = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
+        layers: 'ld:TN_LD50K_1516',  // The layer you want to display (layer name)
+        format: 'image/png',          // Image format for tiles
+        transparent: true,            // Transparent background for overlay
+        version: '1.1.1',             // WMS version
+        crs: L.CRS.EPSG4326,          // Coordinate Reference System
+        bounds: [[8.075, 76.234], [13.565, 80.349]],  // Define the bounding box (extent for Tamil Nadu)
+        attribution: 'Bhuvan'         // Optional: Add attribution for the data source
+    });
     
     // Add layer control
     L.control.layers(baseLayers, overlays).addTo(map);

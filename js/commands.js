@@ -51,6 +51,14 @@ function processCommand(command) {
         clearMarkers();
         return "Cleared all markers";
     }
+
+    if (command.includes('show flood risk') || command.includes('flood zones')) {
+        return toggleOverlay('Flood Risk Zones', true);
+    }
+
+    if (command.includes('hide flood risk') || command.includes('hide flood zones')) {
+        return toggleOverlay('Flood Risk Zones', false);
+    }
     
     // Compound commands
     if ((command.includes('find') || command.includes('search for')) && 
