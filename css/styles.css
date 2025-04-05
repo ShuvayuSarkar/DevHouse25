@@ -348,3 +348,112 @@ footer {
     margin-top: 10px;
 }
 }
+
+/* Voice Command History */
+.voice-command-history {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 1.2rem;
+}
+
+.voice-command-history h2 {
+    margin-bottom: 1.2rem;
+    color: #2c3e50;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.voice-command-history h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border-radius: 2px;
+}
+
+#history-content {
+    margin-top: 1rem;
+}
+
+#history-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+#history-content th,
+#history-content td {
+    border: 1px solid #eee;
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+#history-content th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+#history-content tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#history-content tr:hover {
+    background-color: #f1f7fd;
+}
+
+/* Style for the buttons */
+#toggle-history-btn,
+#export-commands-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+#export-commands-btn {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+#toggle-history-btn:hover,
+#export-commands-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+    background: linear-gradient(135deg, #2980b9, #1a6ca4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .voice-command-history {
+        padding: 1rem;
+    }
+    
+    #history-content th,
+    #history-content td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+    
+    #toggle-history-btn,
+    #export-commands-btn {
+        padding: 8px 12px;
+    }
+}
