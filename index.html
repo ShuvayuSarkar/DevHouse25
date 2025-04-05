@@ -13,6 +13,8 @@
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.min.js"></script>
 </head>
 <body>
     <header>
@@ -41,6 +43,30 @@
                 </div>
             </div>
         </div>
+
+        <!-- Add this in the Voice Command History section of your index.html -->
+<div class="voice-command-history">
+    <h2>Voice Command History</h2>
+    <button id="toggle-history-btn">Hide History</button>
+    <div id="history-content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Command</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody id="command-history-body">
+                <tr>
+                    <td colspan="3" style="text-align: center;">No commands yet</td>
+                </tr>
+            </tbody>
+        </table>
+        <button id="export-commands-btn">Export Database</button>
+    </div>
+</div>
+
     </main>
     
     <footer>
@@ -57,5 +83,7 @@
     <script src="js/commands.js"></script>
     <script src="js/speech.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/history.js"></script>
 </body>
 </html>

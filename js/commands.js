@@ -5,14 +5,14 @@
 /**
  * Process a voice command
  * @param {string} command - The voice command to process
- * @returns {string} - Response message
+ * @returns {string|Promise<string>} - Response message or promise resolving to response message
  */
 function processCommand(command) {
     // Location commands
     if (command.includes('go to') || command.includes('show me')) {
         const location = extractLocation(command);
         if (location) {
-            return geocodeAndZoom(location);
+            return geocodeAndZoom(location); // This returns a promise
         }
     }
     
@@ -53,20 +53,20 @@ function processCommand(command) {
     }
 
     if (command.includes('show flood risk') || command.includes('flood zones')) {
-        return toggleOverlay('Flood Risk Zones', true);
+        return toggleOverlay('Tamil Nadu Flood Zones', true);
     }
 
     if (command.includes('hide flood risk') || command.includes('hide flood zones')) {
-        return toggleOverlay('Flood Risk Zones', false);
+        return toggleOverlay('Tamil Nadu Flood Zones', false);
     }
     
     // Compound commands
     if ((command.includes('find') || command.includes('search for')) && 
         (command.includes('near') || command.includes('around') || command.includes('in'))) {
-        return handleNearbySearch(command);
+        return handleNearbySearch(command); // This returns a promise
     }
     
-    return `Sorry, I didn't understand: "${command}"`;
+    return Promise.resolve(`Sorry, I didn't understand: "${command}"`);
 }
 
 /**
@@ -152,3 +152,4 @@ function handleNearbySearch(command) {
     
     return searchPOIs(searchInfo.poiType, searchInfo.location);
 }
+
