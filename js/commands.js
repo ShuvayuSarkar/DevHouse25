@@ -45,19 +45,19 @@ function processCommand(command) {
     if (command.includes('hide bhuvan') || command.includes('disable bhuvan')) {
         return toggleOverlay('Bhuvan India', false);
     }
+
+    if (command.includes('show land use') || command.includes('enable land use')) {
+        return toggleOverlay('Tamil Nadu Land Use', true);
+    }
+
+    if (command.includes('hide land use') || command.includes('disable land use')) {
+        return toggleOverlay('Tamil Nadu Land Use', false);
+    }
     
     // Clear markers
     if (command.includes('clear') && (command.includes('marker') || command.includes('result'))) {
         clearMarkers();
         return "Cleared all markers";
-    }
-
-    if (command.includes('show flood risk') || command.includes('flood zones')) {
-        return toggleOverlay('Tamil Nadu Flood Zones', true);
-    }
-
-    if (command.includes('hide flood risk') || command.includes('hide flood zones')) {
-        return toggleOverlay('Tamil Nadu Flood Zones', false);
     }
     
     // Compound commands
